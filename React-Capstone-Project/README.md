@@ -276,38 +276,29 @@ UI inspiration and styling ideas were implemented with the help of:
 
 ---
 
-## 📷 Screenshots
+# 📷 Application Screenshots
 
-### Home Page
+## 🏠 Home Page
 
-```markdown
-![Home Page](./screenshots/home.png)
-```
+![Home Page](./ScreenShots/Home%20Page.PNG)
 
 ---
 
-### Products Page
+## 📋 Products Page
 
-```markdown
-![Products Page](./screenshots/products.png)
-```
+![Products Page](./ScreenShots/Products%20List.PNG)
 
 ---
 
-### Add Product Page
+## ➕ Add Product Page
 
-```markdown
-![Add Product Page](./screenshots/add-product.png)
-```
+![Add Product Page](./ScreenShots/Add%20Product.PNG)
 
 ---
 
-### Edit Product Page
+## ✏️ Edit Product Page
 
-```markdown
-![Edit Product Page](./screenshots/edit-product.png)
-```
-
+![Edit Product Page](./ScreenShots/Edit%20Product.PNG)
 ---
 
 ## 🔥 How the Project Works
