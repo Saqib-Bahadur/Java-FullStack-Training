@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 55000,
+      "quantity": 10,
+      "category": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Mouse",
+      "price": "802",
+      "quantity": 20,
+      "category": "Electronics"
+    },
+    {
+      "id": "3",
+      "name": "T-Shirt",
+      "price": 600,
+      "quantity": 15,
+      "category": "Clothing"
+    },
+    {
+      "id": "4",
+      "name": "Java Book",
+      "price": 450,
+      "quantity": 8,
+      "category": "Books"
+    },
+    {
+      "id": "5",
+      "name": "Coffee Mug",
+      "price": "250",
+      "quantity": 12,
+      "category": "Home"
+    },
+    {
+      "id": "cb17",
+      "name": "Refined White Sugar",
+      "price": 450,
+      "quantity": 10,
+      "category": "Food"
+    }
+  ]
+}
