@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var color = "blue"; // "red" -- overwriting
+
+      var x = 1000;
+
+      function changeColor() {
+        var x = 200;
+        var color = "yellow"; // 'blue'
+        if (color === "blue") {
+          // Scope Chain --- [changeColor(),window]
+          color = "red"; // Scope Chain --- [changeColor(),window]
+        } else {
+          color = "blue"; // Scope Chain --- [changeColor(),window]
+        }
+        console.log(x); // SC [changeColor(),window] // 200 - overide - narrow scopes can overide the wider scopes
+
+        var age = 20;
+      }
+      changeColor();
+      console.log("Value of Color is " + color); // red
+
+      console.log(age); // ? -- error  -- wider scopes cannot access the narrow scope
+
+      // scope chain - the [] which defines the order in which scopes will be searched
+      // activation object - the '1st scope' in the scope chain array
+    </script>
+  </head>
+  <body></body>
+</html>

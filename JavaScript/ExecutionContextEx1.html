@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Chain and Variable Shadowing</title>
+
+    <script>
+
+        // ==========================================================
+        // 1. Global Scope (Window Scope)
+        // ==========================================================
+        // Variables declared outside functions belong to the global scope.
+        // They are accessible throughout the program.
+
+        var color = "blue";
+        var x = 1000;
+
+
+        // ==========================================================
+        // 2. Function Scope (Lexical Scope)
+        // ==========================================================
+        // Variables declared inside a function are local to that function
+        // and cannot be accessed from outside.
+
+        function changeColor() {
+
+            // Local variables (Function Scope)
+            var x = 200;
+            var color = "yellow";
+
+
+            // ======================================================
+            // 3. Scope Chain
+            // ======================================================
+            // Scope Chain Order:
+            // [changeColor(), window]
+            //
+            // JavaScript first searches inside the current scope.
+            // If the variable is not found, it moves to the parent scope.
+
+            if (color === "blue") {
+
+                // Variable found in current function scope
+                color = "red";
+
+            } else {
+
+                // Since color is "yellow", else block executes
+                color = "blue";
+
+            }
+
+
+            // ======================================================
+            // 4. Variable Shadowing
+            // ======================================================
+            // Local variables override variables with the same name
+            // from the outer (global) scope.
+
+            console.log(x); // Output: 200
+
+            // Local variable
+            var age = 20;
+        }
+
+
+        // Function call
+        changeColor();
+
+
+        // ==========================================================
+        // 5. Global Variable Remains Unchanged
+        // ==========================================================
+        // The local variable "color" inside changeColor() shadows
+        // the global variable "color".
+
+        console.log("Value of Color is " + color);
+
+        // Output:
+        // Value of Color is blue
+
+
+        // ==========================================================
+        // 6. Access Rules
+        // ==========================================================
+        // Wider scopes can be accessed from narrower scopes,
+        // but narrower scopes cannot be accessed from wider scopes.
+
+        console.log(age);
+
+        // Error:
+        // ReferenceError: age is not defined
+
+
+        // ==========================================================
+        // 7. Scope Chain
+        // ==========================================================
+        /*
+            Scope Chain:
+
+            Global Scope
+                  ↑
+            changeColor()
+
+            Search Order:
+            [changeColor(), window]
+
+            JavaScript first searches inside changeColor().
+            If not found, it searches the global scope.
+        */
+
+
+        // ==========================================================
+        // 8. Activation Object
+        // ==========================================================
+        /*
+            Activation Object (AO)
+
+            Every function creates an Activation Object that contains:
+
+            - Parameters
+            - Local Variables
+            - Arguments Object
+
+            Example:
+
+            changeColor AO
+            ----------------
+            x = 200
+            color = "blue"
+            age = 20
+
+            Scope Chain:
+            [Activation Object, Window Object]
+        */
+
+
+        // ==========================================================
+        // Important Rules
+        // ==========================================================
+        /*
+            ✓ Narrow scopes can access wider scopes.
+
+            ✓ Narrow scopes can shadow (override) wider-scope variables.
+
+            ✗ Wider scopes cannot access variables declared in narrower scopes.
+
+            ✓ Variable lookup follows the Scope Chain.
+
+            ✓ Every function creates an Activation Object.
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

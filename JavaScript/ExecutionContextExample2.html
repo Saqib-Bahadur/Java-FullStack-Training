@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var color = "blue";
+
+      function changeColor() {
+        console.log(x); // SC [changeColor(),window] - 2 scopes
+        var anotherColor = "red";
+
+        function swapColors() {
+          console.log(x); // SC [swapColors(),changeColor(),window] -3 scopes
+          var tempColor = anotherColor;
+          anotherColor = color;
+          color = tempColor;
+        }
+        swapColors();
+      }
+      changeColor();
+
+      console.log("value of color is " + color);
+      console.log(x); //SC [window] - 1 scope
+    </script>
+  </head>
+  <body></body>
+</html>

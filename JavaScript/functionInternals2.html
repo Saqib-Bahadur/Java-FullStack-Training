@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function f1() {
+        this.name = "George"; // privileged
+        var age = 25; // private
+        var job = "software engineer"; // private
+
+        // return 500;
+      }
+      let inst1 = new f1();
+      console.log(typeof inst1); // 'object'
+
+      console.log(inst1.name); // 'George'
+      console.log(inst1.age); // 'undefined'
+      console.log(inst1.job); // 'undefined'
+      console.log(inst1);
+    </script>
+  </head>
+  <body></body>
+</html>

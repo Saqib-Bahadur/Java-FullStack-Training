@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let friends = ["nicholas", "greg", "addy", "stoyan"];
+
+      //Array Destructuring in ES6
+      const [a, b, c, d] = friends;
+
+      console.log(a); //"nicholas"
+      console.log(b); // "greg"
+      console.log(c); // "addy"
+      console.log(d); // "stoyan"
+
+      for (let i = 0; i < 10; i++) {
+        console.log(d); // 'stoyan'  -- ten times
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
